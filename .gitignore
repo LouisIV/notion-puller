@@ -177,6 +177,8 @@ dist
 # Local environment variables
 .env.local
 
-
 # Output directory
-output/.cursor/
+output/
+
+# Cursor plan directory
+.cursor/
