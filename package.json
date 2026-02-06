@@ -13,9 +13,12 @@
   "scripts": {
     "dev": "bun run src/index.ts",
     "build": "tsdown",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "changeset": "changeset"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "^0.5.2",
+    "@changesets/cli": "^2.29.8",
     "@types/bun": "latest",
     "@types/node": "^25.2.1",
     "tsdown": "^0.20.3",
