@@ -30,23 +30,18 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-
-      - name: Configure npm for trusted publishing
-        run: |
-          npm install -g npm@latest
-          npm config set registry https://registry.npmjs.org/
-          echo "npm version: $(npm --version)"
-          echo "node version: $(node --version)"
-          echo "npm config:"
-          npm config list
+          registry-url: https://registry.npmjs.org
 
       - name: Create release PR or publish
         id: changesets
         uses: changesets/action@v1
         with:
-          publish: npx changeset publish
           version: npx changeset version
           title: "chore: version packages"
           commit: "chore: version packages"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish to npm
+        if: steps.changesets.outputs.hasChangesets == 'false'
+        run: npx changeset publish
