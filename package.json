@@ -4,8 +4,12 @@
   "description": "Pull Notion pages and databases to local markdown and CSV files",
   "type": "module",
   "bin": {
-    "notion-pull": "./dist/index.mjs"
+    "notion-puller": "./dist/index.mjs"
   },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "dev": "bun run src/index.ts",
     "build": "tsdown",
