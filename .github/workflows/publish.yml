@@ -44,4 +44,7 @@ jobs:
 
       - name: Publish to npm
         if: steps.changesets.outputs.hasChangesets == 'false'
-        run: npx changeset publish
+        run: |
+          rm -f ~/.npmrc
+          npm config set registry https://registry.npmjs.org/
+          npx changeset publish
