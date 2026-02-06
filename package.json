@@ -1,0 +1,24 @@
+{
+  "name": "notion-puller",
+  "version": "0.1.0",
+  "description": "Pull Notion pages and databases to local markdown and CSV files",
+  "type": "module",
+  "bin": {
+    "notion-pull": "./dist/index.mjs"
+  },
+  "scripts": {
+    "dev": "bun run src/index.ts",
+    "build": "tsdown",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^25.2.1",
+    "tsdown": "^0.20.3",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@notionhq/client": "^5.9.0",
+    "commander": "^14.0.3"
+  }
+}
