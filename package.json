@@ -2,6 +2,11 @@
   "name": "notion-puller",
   "version": "0.2.0",
   "description": "Pull Notion pages and databases to local markdown and CSV files",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LouisIV/notion-puller.git"
+  },
   "type": "module",
   "bin": {
     "notion-puller": "./dist/index.mjs"
